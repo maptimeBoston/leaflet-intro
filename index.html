@@ -119,7 +119,7 @@
 &lt;/body&gt;
 &lt;/html&gt;
 	</code></pre>
-	<p>Want to follow along? Donwload this <a href="https://gist.githubusercontent.com/awoodruff/e9739a6719e0604eef58/raw/a4609a968a393151b67110d96ba7515ed6ce0505/index.html" target="_blank">starter file</a>.</p>
+	<p>Want to follow along? Download this <a href="https://gist.githubusercontent.com/awoodruff/e9739a6719e0604eef58/raw/a4609a968a393151b67110d96ba7515ed6ce0505/index.html" target="_blank">starter file</a>.</p>
 	<p>Let's focus on the code in that <code>&lt;script&gt;</code> tag near the end. What did we do?
 		<ol>
 			<li>Created a <code>map</code> variable</li>
@@ -296,7 +296,7 @@ $.getJSON("rodents.geojson",function(data){
 });
 </code></pre>
 <p>Polygon and line GeoJSON data is added in the same basic way as points. (In fact, all three could be loaded from a single GeoJSON file.) We just repeat the step from a few examples back, using <a href="neighborhoods.geojson" target="_blank">neighborhoods.geojson</a> this time.</p>
-<p>Savvy coders at this point may notice that the two asyncrhonous <code>$.getJSON</code> requests are not guaranteed to finish in the order that the layers need to be stacked. That is, we don't want rodents drawing first, underneath the neighborhoods. Don't worry, and remember that Leaflet is clever. If you dig into your web inspector, you will find that the map consists of several <a href="http://leafletjs.com/reference.html#map-panes" target="_blank">panes</a>. SVG paths, such as our neighborhoods, will always be drawn in the <em>overlay</em> pane, which is beneath the <em>maker</em> pane into which things like our rat markers were drawn. Thus it doesn't matter which of our two layers draws first; they will both be drawn in the right place. (If we had multiple polygon or point layers, however, we would need to be more careful.)</p>
+<p>Savvy coders at this point may notice that the two asyncrhonous <code>$.getJSON</code> requests are not guaranteed to finish in the order that the layers need to be stacked. That is, we don't want rodents drawing first, underneath the neighborhoods. Don't worry, and remember that Leaflet is clever. If you dig into your web inspector, you will find that the map consists of several <a href="http://leafletjs.com/reference.html#map-panes" target="_blank">panes</a>. SVG paths, such as our neighborhoods, will always be drawn in the <em>overlay</em> pane, which is beneath the <em>marker</em> pane into which things like our rat markers were drawn. Thus it doesn't matter which of our two layers draws first; they will both be drawn in the right place. (If we had multiple polygon or point layers, however, we would need to be more careful.)</p>
 
 <h2 id="section8">Thematic styles</h2>
 <p>Okay. Let's do something about that default blue. Let's make these polygons useful by turning them into a choropleth layer. The neighborhoods GeoJSON file contains numbers for the number of rodent incidents per square mile in each neighborhood, calculated in QGIS. So here's a #ratdensitymap.</p>
