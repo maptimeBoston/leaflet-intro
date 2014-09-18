@@ -125,7 +125,7 @@
 			<li>Created a <code>map</code> variable</li>
 			<li>Used <a href="http://leafletjs.com/reference.html#map-l.map" target="_blank"><code>L.map()</code></a> to initialize the map object, passing it the id of the div where we want the map to go</li>
 			<li>Used the <a href="http://leafletjs.com/reference.html#map-setview" target="_blank"><code>setView()</code></a> method to center the initial map view on Boston (latitude 42.35, longitude -71.08, and zoom level 13)</li>
-			<li>Used <a href="http://leafletjs.com/reference.html#tilelayer" target="_blank"><code>L.tileLayer()</code></a> to create a base layer of map tiles (in this case <a href="http://mapc.org">MAPC's</a> basemap), specifying a URL template for the tile images. {z}/{x}/{y} is a template that Leaflet uses to find tiles at the correct zoom, x, and y coordinates. (See <a href="http://maptime.github.io/anatomy-of-a-web-map/#57" target="_blank">Anatomy of a Web Map</a>). We also specified a few options:
+			<li>Used <a href="http://leafletjs.com/reference.html#tilelayer" target="_blank"><code>L.tileLayer()</code></a> to create a base layer of map tiles, specifying a URL template for the tile images. In this case we're using <a href="http://mapc.org" target="_blank">MAPC's</a> basemap, but there are <a href="http://leaflet-extras.github.io/leaflet-providers/preview/" target="_blank">many options out there</a>. {z}/{x}/{y} is a template that Leaflet uses to find tiles at the correct zoom, x, and y coordinates. (See <a href="http://maptime.github.io/anatomy-of-a-web-map/#57" target="_blank">Anatomy of a Web Map</a>). We also specified a few options:
 				<ul>
 					<li>Attribution text to appear in the corner. Always property attribute your map data!</li>
 					<li>Maximum and minimum zoom levels. Some tile sets such as this one only cover a certain zoom range. These options prevent the user from zooming beyond that range and seeing a blank map.</li>
@@ -137,7 +137,7 @@
 	<h2 id="section3">More layers</h2>
 	<div class="map" id="map1"></div>
 	<a class="standalone" href="http://bl.ocks.org/awoodruff/f89989cd2499cf4a900c" target="_blank">View this example on its own</a>
-	<p>Try other base layers, such as <a href="http://maps.stamen.com/" target="_blank">Stamen</a> or <a href="http://wiki.openstreetmap.org/wiki/Tiles" target="_blank">OpenStreetMap</a>. Sometimes maps use multiple tile layers at once. The map above adds MAPC's bike lane layer, which looks like vector data but is actually made up of PNG images with transparency.</p>
+	<p>Sometimes maps use multiple tile layers at once. The map above adds MAPC's bike lane layer, which looks like vector data but is actually made up of PNG images with transparency.</p>
 	<p>Just pile on additional layers the same way as the first one. As we'll see later, other types of layers are added in a very similar manner.</p>
 	<pre>
 		<code class="language-javascript">
@@ -376,6 +376,7 @@ map.addLayer(clusters); CCC
 	<ul>
 		<li><a href="http://leafletjs.com/examples.html" target="_blank">Tutorials on the main Leaflet site.</a></li>
 		<li><a href="http://leafletjs.com/reference.html" target="_blank">Leaflet API reference</a></li>
+		<li><a href="http://leaflet-extras.github.io/leaflet-providers/preview/" target="_blank">Previews and URLs for many basemap options</a></li>
 		<li><a href="https://www.mapbox.com/mapbox.js/api/v2.1.0/" target="_blank">Mapbox.js, a library that builds on Leaflet and integrates with Mapbox maps</a></li>
 		<li><a href="https://speakerdeck.com/mourner/future-of-leaflet" target="_blank">The Future of Leaflet</a> (version 1.0 is coming!)</li>
 		<li><a href="http://vimeo.com/106112939" target="_blank">How Simplicity Will Save GIS</a>, a talk by Vladimir Agafonkin at FOSS4G 2014, demonstrating the thinking behind Leaflet</li>
